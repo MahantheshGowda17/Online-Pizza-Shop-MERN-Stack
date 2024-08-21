@@ -4,7 +4,7 @@ import Restaurant from "../component/Restaurant";
 import Loader from "../component/layout/Loader";
 import Message from "../component/Message";
 import { useDispatch, useSelector } from "react-redux";
-import CountRestautant from "./CountRestaurant";
+
 import { useParams } from 'react-router-dom';
 
 
@@ -39,7 +39,7 @@ const Home = () => {
 
     return (
         <>
-        <CountRestautant />
+        
             {restaurantsLoading ? (
                 <Loader/>
             ) : restaurantsError ? (
@@ -50,7 +50,7 @@ const Home = () => {
                         <div className="sort">
                         <button className="sort_veg p-3" onClick={handleToggleVegOnly }
                         >
-                            {showVegOnly ?"Show All":"Pure Veg"}
+                            {showVegOnly ?"Show All":""}
 
                         </button>
                         <button className="sort_rev p-3" onClick={handleSortByReview}>Sort By Reviews

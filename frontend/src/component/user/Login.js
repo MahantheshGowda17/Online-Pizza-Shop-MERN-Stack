@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, clearErrors } from "../../actions/userActions";
 import VisibilityIcon from '@mui/icons-material/Visibility'; 
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Typography } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +47,7 @@ const Login = () => {
           <div className="row wrapper">
             <div className="col-10 col-lg-5">
               <form className="shadow-lg" onSubmit={submitHandler}>
-                <h1 className="mb-3">Login</h1>
+              <h1 className="mb-3">Login</h1>
                 <div className="form-group">
                   <label htmlFor="email_field">Email</label>
                   <input
@@ -78,10 +79,7 @@ const Login = () => {
                 >
                   LOGIN
                 </button>
-
-                <Link to="/users/signup" className="float-right mt-3">
-                  NEW USER?
-                </Link>
+                <Typography varient='subtitle2' sx={{ textAlign:'center',mt:'10px', ml:'0px', color:'black'}}>Don't have an account?<a href="/users/signup" style={{textDecoration:'none',color:"blue"}}>Register</a></Typography>
               </form>
             </div>
           </div>

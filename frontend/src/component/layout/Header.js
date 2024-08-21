@@ -6,6 +6,12 @@ import { logout } from "../../actions/userActions";
 
 import Search from "./Search";
 import "../../App.css";
+import { Box, Grid, Paper, Typography } from "@mui/material";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LoginIcon from '@mui/icons-material/Login';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 const Header = () => {
@@ -26,7 +32,7 @@ const Header = () => {
         {/* logo */}
         <div className="col-12 col-md-3">
           <Link to="/">
-            <img src="/images/logo.webp" alt="logo" className="logo" />
+            <img src="/images/lp.png" alt="logo" className="logo" /> 
           </Link>
         </div>
 
@@ -40,11 +46,14 @@ const Header = () => {
         </div>
 
         {/* Login */}
+       
+
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
           {/* ml-> margin left (3unit from left) */}
+          <Link id="home" to="/"sx={{fontSize:50}}><HomeIcon /></Link>
           <Link to="/cart" style={{ textDecoration: "none" }}>
             <span className="ml-3" id="cart">
-              Cart
+             <ShoppingCartIcon/>
             </span>
             <span className="ml-1" id="cart_count">
               {cartItems.length}
@@ -96,12 +105,51 @@ const Header = () => {
           ) : (
             !loading && (
               <Link to="/users/login" className="btn ml-4" id="login_btn">
-                Login
+                <LoginIcon sx={{fontSize:30}}/>
               </Link>
             )
           )}
         </div>
       </nav>
+      <Paper
+    sx={{
+       position:'relative',
+        backgroundColor:'grey.800',
+        color:'#fff',
+        mb:4,
+        backgroundSize:"cover",
+        backgroundRepeat:"no-repeat",
+        backgroundPosition:"center",
+        backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkScIZavRMG2fEwXU2IUfMLbDih9fKK-UBePnYizmSD1lVMxKF_pgSHpv1BXLh_9P9GOs&usqp=CAU)',
+    }}>
+        <Box 
+        sx={{
+        //position:"absolute",
+        top:0,
+        bottom:0,
+        left: 0,
+        right : 0,
+        background:"rgba(0,0,0,0.3)",
+        }}>
+            <Grid container>
+                <Grid item md={6}>
+                    <Box
+                    sx={{
+                        position:"relative",
+                        p:{xs:3, md:6},
+                        pr:{md:'0'}
+                    }}>
+                        <Typography component="h1" variant="h3" color="inherit">Just have a fresh-baked pizza delivered to your door....<SentimentSatisfiedAltIcon sx={{ fontSize: 35}}/> </Typography>
+                        <Typography component="h5" color="inherit">Best pizza, Best value <FavoriteIcon sx={{fontSize:"h5"}}/> </Typography>
+                    </Box>
+
+                </Grid>
+
+            </Grid>
+             
+        </Box>
+
+    </Paper>
     </>
   );
 };

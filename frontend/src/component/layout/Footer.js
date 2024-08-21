@@ -1,11 +1,12 @@
 import React from 'react'
+import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 
 const Footer = () => {
   return (
     <>
     <footer>
         <p  className="text-center">
-             Food Delivery Website - 2023-2024,All Rights Reserved..
+        Copyright © Pizza Shop<LocalPizzaIcon/>
         </p>
     </footer>
     
